@@ -75,17 +75,8 @@ class OnlineSalesRegisterCollector:
 #7. Посчитай общую сумму налогов
 
     def total_tax(self):
-        discount = 0.9 if self.__number_items > 10 else 1.0
-    
-        total = 0.0
-    
-        for item in self.__name_items:
-            price = self.__item_price[item]
-            tax_rate = self.__tax_rate[item]
-        
-            total += price * discount * (tax_rate / 100)
-    
-        return total
+       
+       return self.ten_percent_tax_calculation() + self.twenty_percent_tax_calculation()
 
 #8. Верни номер телефона покупателя
 
